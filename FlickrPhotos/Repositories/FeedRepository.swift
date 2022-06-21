@@ -23,7 +23,7 @@ struct FeedRepository {
     let queryParams = [
       "method": "flickr.interestingness.getList",
       "api_key": "f7d8ca3dcae34cca78ca8a7a76181859",
-      "per_page": "10",
+      "per_page": "50",
       "format": "json",
       "nojsoncallback": "true",
       "extras": "url_m",

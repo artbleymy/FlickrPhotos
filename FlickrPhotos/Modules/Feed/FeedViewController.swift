@@ -63,7 +63,20 @@ final class FeedViewController: UIViewController {
   }
 }
 
-extension FeedViewController: UICollectionViewDelegate {}
+extension FeedViewController: UICollectionViewDelegate {
+  
+  func collectionView(
+    _ collectionView: UICollectionView,
+    willDisplay cell: UICollectionViewCell,
+    forItemAt indexPath: IndexPath
+  ) {
+    if indexPath.row >= viewModel.items.count - 5 {
+      viewModel.loadFeed() {
+        collectionView.reloadSections(IndexSet(integer: 0))
+      }
+    }
+  }
+}
 
 extension FeedViewController: UICollectionViewDataSource {
   func collectionView(

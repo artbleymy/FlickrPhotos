@@ -31,7 +31,7 @@ final class FeedViewModel {
     guard currentPage <= numberOfPages else { return }
     
     state = .loading
-    // TODO: add feed loading
+
     feedRepository.loadFeed(page: currentPage) { [weak self] result in
       guard let self = self else { return }
 
