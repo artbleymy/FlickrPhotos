@@ -1,0 +1,17 @@
+## Build generated
+build/
+DerivedData/
+test_output/
+
+## Various settings
+*.lock
+*.pbxuser
+!default.pbxuser
+xcuserdata/
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+.DS_Store
