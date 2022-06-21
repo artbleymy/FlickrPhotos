@@ -16,6 +16,7 @@
 		853DC05C2861AA8900C1F1B5 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC05B2861AA8900C1F1B5 /* Feed.swift */; };
 		853DC05E2861AA9D00C1F1B5 /* PhotosList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC05D2861AA9D00C1F1B5 /* PhotosList.swift */; };
 		853DC0602861AAF500C1F1B5 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC05F2861AAF500C1F1B5 /* Photo.swift */; };
+		853DC0632861AE2800C1F1B5 /* FeedMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC0622861AE2800C1F1B5 /* FeedMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		853DC05B2861AA8900C1F1B5 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		853DC05D2861AA9D00C1F1B5 /* PhotosList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosList.swift; sourceTree = "<group>"; };
 		853DC05F2861AAF500C1F1B5 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		853DC0622861AE2800C1F1B5 /* FeedMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		853DC03E2861081000C1F1B5 /* FlickrPhotos */ = {
 			isa = PBXGroup;
 			children = (
+				853DC0612861AC2D00C1F1B5 /* Mocks */,
 				853DC0582861AA1A00C1F1B5 /* Models */,
 				853DC0552861A89400C1F1B5 /* Modules */,
 				853DC0542861A7F800C1F1B5 /* Resources */,
@@ -122,6 +125,14 @@
 			children = (
 			);
 			path = PhotoViewer;
+			sourceTree = "<group>";
+		};
+		853DC0612861AC2D00C1F1B5 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				853DC0622861AE2800C1F1B5 /* FeedMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 				853DC0442861081000C1F1B5 /* ViewController.swift in Sources */,
 				853DC0402861081000C1F1B5 /* AppDelegate.swift in Sources */,
 				853DC0422861081000C1F1B5 /* SceneDelegate.swift in Sources */,
+				853DC0632861AE2800C1F1B5 /* FeedMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
