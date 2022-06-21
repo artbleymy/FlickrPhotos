@@ -25,6 +25,8 @@
 		853DC071286208DB00C1F1B5 /* ImageLoadingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC070286208DB00C1F1B5 /* ImageLoadingError.swift */; };
 		853DC07328620E7D00C1F1B5 /* FeedRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC07228620E7D00C1F1B5 /* FeedRepository.swift */; };
 		853DC07528620E8F00C1F1B5 /* FeedLoadingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC07428620E8F00C1F1B5 /* FeedLoadingError.swift */; };
+		853DC0772862132800C1F1B5 /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC0762862132800C1F1B5 /* PhotoViewerViewController.swift */; };
+		853DC0792862136000C1F1B5 /* PhotoViewerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC0782862136000C1F1B5 /* PhotoViewerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		853DC070286208DB00C1F1B5 /* ImageLoadingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingError.swift; sourceTree = "<group>"; };
 		853DC07228620E7D00C1F1B5 /* FeedRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRepository.swift; sourceTree = "<group>"; };
 		853DC07428620E8F00C1F1B5 /* FeedLoadingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoadingError.swift; sourceTree = "<group>"; };
+		853DC0762862132800C1F1B5 /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
+		853DC0782862136000C1F1B5 /* PhotoViewerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 		853DC05A2861AA3400C1F1B5 /* PhotoViewer */ = {
 			isa = PBXGroup;
 			children = (
+				853DC0762862132800C1F1B5 /* PhotoViewerViewController.swift */,
+				853DC0782862136000C1F1B5 /* PhotoViewerViewModel.swift */,
 			);
 			path = PhotoViewer;
 			sourceTree = "<group>";
@@ -250,7 +256,9 @@
 				853DC0602861AAF500C1F1B5 /* Photo.swift in Sources */,
 				853DC07328620E7D00C1F1B5 /* FeedRepository.swift in Sources */,
 				853DC05E2861AA9D00C1F1B5 /* PhotosList.swift in Sources */,
+				853DC0772862132800C1F1B5 /* PhotoViewerViewController.swift in Sources */,
 				853DC0572861A8A500C1F1B5 /* ModulesFactory.swift in Sources */,
+				853DC0792862136000C1F1B5 /* PhotoViewerViewModel.swift in Sources */,
 				853DC05C2861AA8900C1F1B5 /* Feed.swift in Sources */,
 				853DC0442861081000C1F1B5 /* FeedViewController.swift in Sources */,
 				853DC0402861081000C1F1B5 /* AppDelegate.swift in Sources */,

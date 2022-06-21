@@ -64,10 +64,9 @@ final class FeedViewController: UIViewController {
 }
 
 extension FeedViewController: UICollectionViewDelegate {
-  
   func collectionView(
     _ collectionView: UICollectionView,
-    willDisplay cell: UICollectionViewCell,
+    willDisplay _: UICollectionViewCell,
     forItemAt indexPath: IndexPath
   ) {
     if indexPath.row >= viewModel.items.count - 5 {
@@ -105,8 +104,8 @@ extension FeedViewController: UICollectionViewDataSource {
 
 extension FeedViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(
-    _ collectionView: UICollectionView,
-    layout collectionViewLayout: UICollectionViewLayout,
+    _: UICollectionView,
+    layout _: UICollectionViewLayout,
     sizeForItemAt indexPath: IndexPath
   ) -> CGSize {
     let aspectRatio = viewModel.items[indexPath.item].aspectRatio
