@@ -10,12 +10,13 @@ import UIKit
 final class FeedCell: UICollectionViewCell {
   static let reuseId = "FeedCell"
   
-  private lazy var label: UILabel = {
-    let label = UILabel()
-    label.translatesAutoresizingMaskIntoConstraints = false
-    label.textColor = .black
-    label.numberOfLines = 0
-    return label
+  private var imageURL: URL?
+  
+  private lazy var imageView: UIImageView = {
+    let imageView = UIImageView()
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+    imageView.contentMode = .scaleAspectFill
+    return imageView
   }()
   
   override init(frame: CGRect) {
@@ -27,18 +28,30 @@ final class FeedCell: UICollectionViewCell {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func setupCell(with imageURL: URL) {
-    label.text = imageURL.absoluteString
+  func setupCell(with photo: Photo, repository: ImagesRepository) {
+    imageView.image = nil
+    imageURL = photo.imageURL
+
+    repository.loadImage(for: photo.imageURL) { [weak self] result in
+      switch result {
+      case let .success(image):
+        if self?.imageURL == photo.imageURL {
+          self?.imageView.image = image
+        }
+      case let .failure(error):
+        print(error.localizedDescription)
+      }
+    }
   }
 
   private func setupLayout() {
-    addSubview(label)
+    addSubview(imageView)
     
     let constraints = [
-      label.topAnchor.constraint(equalTo: topAnchor),
-      label.leadingAnchor.constraint(equalTo: leadingAnchor),
-      label.trailingAnchor.constraint(equalTo: trailingAnchor),
-      label.bottomAnchor.constraint(equalTo: bottomAnchor),
+      imageView.topAnchor.constraint(equalTo: topAnchor),
+      imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
     ]
     
     NSLayoutConstraint.activate(constraints)

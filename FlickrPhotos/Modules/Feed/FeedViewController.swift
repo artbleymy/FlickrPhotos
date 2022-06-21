@@ -10,6 +10,7 @@ import UIKit
 final class FeedViewController: UIViewController {
   
   private let viewModel: FeedViewModel
+  private let imagesRepository: ImagesRepository
 
   private lazy var collectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
@@ -22,8 +23,12 @@ final class FeedViewController: UIViewController {
     return collectionView
   }()
   
-  init(viewModel: FeedViewModel) {
+  init(
+    viewModel: FeedViewModel,
+    imagesRepository: ImagesRepository
+  ) {
     self.viewModel = viewModel
+    self.imagesRepository = imagesRepository
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -70,7 +75,10 @@ extension FeedViewController: UICollectionViewDataSource {
     else {
       fatalError("Dequeue feed cell error")
     }
-    cell.setupCell(with: viewModel.items[indexPath.item].imageURL)
+    cell.setupCell(
+      with: viewModel.items[indexPath.item],
+      repository: imagesRepository
+    )
     return cell
   }
 }
@@ -81,6 +89,9 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
     layout collectionViewLayout: UICollectionViewLayout,
     sizeForItemAt indexPath: IndexPath
   ) -> CGSize {
-    CGSize(width: view.bounds.width, height: 200)
+    let aspectRatio = viewModel.items[indexPath.item].aspectRatio
+    let width = view.bounds.width
+    let height = width * aspectRatio
+    return CGSize(width: width, height: height)
   }
 }
