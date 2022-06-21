@@ -8,17 +8,17 @@
 import UIKit
 
 final class ModulesFactory {
-    lazy var navigationController = makeNavigationController()
-    
-    private lazy var feedModule = makeFeedViewController()
-    
-    private func makeNavigationController() -> UIViewController {
-        UINavigationController(rootViewController: feedModule)
-    }
-    
-    private func makeFeedViewController() -> UIViewController {
-        ViewController()
-    }
-    
+  lazy var navigationController = makeNavigationController()
+  
+  private lazy var feedModule = makeFeedViewController()
+  
+  private func makeNavigationController() -> UIViewController {
+    UINavigationController(rootViewController: feedModule)
+  }
+  
+  private func makeFeedViewController() -> UIViewController {
+    ViewController()
+  }
+  
 }
 
