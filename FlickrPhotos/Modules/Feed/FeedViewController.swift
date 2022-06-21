@@ -8,6 +8,7 @@
 import UIKit
 
 final class FeedViewController: UIViewController {
+  var openPhotoHandler: ((Photo) -> Void)?
   
   private let viewModel: FeedViewModel
   private let imagesRepository: ImagesRepository
@@ -64,6 +65,14 @@ final class FeedViewController: UIViewController {
 }
 
 extension FeedViewController: UICollectionViewDelegate {
+  
+  func collectionView(
+    _ collectionView: UICollectionView,
+    didSelectItemAt indexPath: IndexPath
+  ) {
+    openPhotoHandler?(viewModel.items[indexPath.item])
+  }
+  
   func collectionView(
     _ collectionView: UICollectionView,
     willDisplay _: UICollectionViewCell,

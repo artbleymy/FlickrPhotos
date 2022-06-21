@@ -7,6 +7,8 @@
 
 import UIKit
 
+let MB = 1024
+
 final class ModulesFactory {
   lazy var navigationController = makeNavigationController()
   
@@ -15,7 +17,7 @@ final class ModulesFactory {
   private lazy var feedRepository = makeFeedRepository()
   private lazy var imagesCache = makeImagesCache()
   
-  private func makeNavigationController() -> UIViewController {
+  private func makeNavigationController() -> UINavigationController {
     UINavigationController(rootViewController: feedModule)
   }
   
@@ -23,10 +25,17 @@ final class ModulesFactory {
     
     let viewModel = FeedViewModel(feedRepository: feedRepository)
 
-    return FeedViewController(
+    let viewController = FeedViewController(
       viewModel: viewModel,
       imagesRepository: imagesRepository
     )
+    
+    viewController.openPhotoHandler = { photo in
+      let photoViewerViewController = self.makePhotoViewerModule(with: photo)
+      self.navigationController.pushViewController(photoViewerViewController, animated: true)
+    }
+    
+    return viewController
   }
   
   private func makeFeedRepository() -> FeedRepository {
@@ -45,10 +54,16 @@ final class ModulesFactory {
     return ImagesRepository(cache: imagesCache, networkService: networkService)
   }
   
+  private func makePhotoViewerModule(with photo: Photo) -> PhotoViewerViewController {
+    let viewModel = PhotoViewerViewModel(photo: photo, imageRepository: imagesRepository)
+    
+    return PhotoViewerViewController(viewModel: viewModel)
+  }
+  
   private func makeImagesCache() -> URLCache {
     URLCache(
-      memoryCapacity: 50 * 1024 * 1024,
-      diskCapacity: 100 * 1024 * 1024,
+      memoryCapacity: 50 * MB,
+      diskCapacity: 100 * MB,
       diskPath: "images"
     )
   }
