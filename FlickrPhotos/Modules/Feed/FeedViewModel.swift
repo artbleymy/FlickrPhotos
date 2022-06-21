@@ -14,14 +14,16 @@ final class FeedViewModel {
     case loaded
   }
 
-  var items = FeedMock.default.photos.photo
+  var items: [Photo] = []
+  
+  private let feedRepository: FeedRepository
   
   private var currentPage = 1
   private var numberOfPages = Int.max
   private var state: State = .initial
   
-  init() {
-    
+  init(feedRepository: FeedRepository) {
+    self.feedRepository = feedRepository
   }
   
   func loadFeed(completion: @escaping () -> Void) {
@@ -30,9 +32,20 @@ final class FeedViewModel {
     
     state = .loading
     // TODO: add feed loading
-    completion()
-    numberOfPages = FeedMock.default.photos.pages
-    currentPage += 1
-    state = .loaded
+    feedRepository.loadFeed(page: currentPage) { [weak self] result in
+      guard let self = self else { return }
+
+      switch result {
+      case let .failure(error):
+        print("[Error]: \(error.localizedDescription)")
+        
+      case let .success(feed):
+        self.items.append(contentsOf: feed.photos.photo)
+        self.numberOfPages = feed.photos.pages
+        self.currentPage += 1
+        completion()
+      }
+      self.state = .loaded
+    }
   }
 }

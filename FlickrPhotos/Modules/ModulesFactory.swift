@@ -12,6 +12,7 @@ final class ModulesFactory {
   
   private lazy var feedModule = makeFeedViewController()
   private lazy var imagesRepository = makeImagesRepository()
+  private lazy var feedRepository = makeFeedRepository()
   private lazy var imagesCache = makeImagesCache()
   
   private func makeNavigationController() -> UIViewController {
@@ -19,12 +20,18 @@ final class ModulesFactory {
   }
   
   private func makeFeedViewController() -> UIViewController {
-    let viewModel = FeedViewModel()
+    
+    let viewModel = FeedViewModel(feedRepository: feedRepository)
 
     return FeedViewController(
       viewModel: viewModel,
       imagesRepository: imagesRepository
     )
+  }
+  
+  private func makeFeedRepository() -> FeedRepository {
+    let networkService = NetworkService(urlSession: URLSession.shared)
+    return FeedRepository(networkService: networkService)
   }
   
   private func makeImagesRepository() -> ImagesRepository {

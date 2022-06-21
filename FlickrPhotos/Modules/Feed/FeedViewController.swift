@@ -40,6 +40,7 @@ final class FeedViewController: UIViewController {
     super.viewDidLoad()
     navigationItem.title = "Flickr's interestingness"
     setupLayout()
+    loadFeed()
   }
   
   private func setupLayout() {
@@ -53,6 +54,12 @@ final class FeedViewController: UIViewController {
       collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
     ]
     NSLayoutConstraint.activate(constraints)
+  }
+  
+  private func loadFeed() {
+    viewModel.loadFeed() { [weak self] in
+      self?.collectionView.reloadData()
+    }
   }
 }
 

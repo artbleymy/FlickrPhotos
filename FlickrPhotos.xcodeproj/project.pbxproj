@@ -23,6 +23,8 @@
 		853DC06C286207DA00C1F1B5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC06B286207DA00C1F1B5 /* NetworkError.swift */; };
 		853DC06F2862088C00C1F1B5 /* ImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC06E2862088C00C1F1B5 /* ImagesRepository.swift */; };
 		853DC071286208DB00C1F1B5 /* ImageLoadingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC070286208DB00C1F1B5 /* ImageLoadingError.swift */; };
+		853DC07328620E7D00C1F1B5 /* FeedRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC07228620E7D00C1F1B5 /* FeedRepository.swift */; };
+		853DC07528620E8F00C1F1B5 /* FeedLoadingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC07428620E8F00C1F1B5 /* FeedLoadingError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		853DC06B286207DA00C1F1B5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		853DC06E2862088C00C1F1B5 /* ImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRepository.swift; sourceTree = "<group>"; };
 		853DC070286208DB00C1F1B5 /* ImageLoadingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingError.swift; sourceTree = "<group>"; };
+		853DC07228620E7D00C1F1B5 /* FeedRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRepository.swift; sourceTree = "<group>"; };
+		853DC07428620E8F00C1F1B5 /* FeedLoadingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoadingError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,8 @@
 			children = (
 				853DC06E2862088C00C1F1B5 /* ImagesRepository.swift */,
 				853DC070286208DB00C1F1B5 /* ImageLoadingError.swift */,
+				853DC07228620E7D00C1F1B5 /* FeedRepository.swift */,
+				853DC07428620E8F00C1F1B5 /* FeedLoadingError.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -242,6 +248,7 @@
 				853DC06A2862078700C1F1B5 /* NetworkService.swift in Sources */,
 				853DC0672862017F00C1F1B5 /* FeedViewModel.swift in Sources */,
 				853DC0602861AAF500C1F1B5 /* Photo.swift in Sources */,
+				853DC07328620E7D00C1F1B5 /* FeedRepository.swift in Sources */,
 				853DC05E2861AA9D00C1F1B5 /* PhotosList.swift in Sources */,
 				853DC0572861A8A500C1F1B5 /* ModulesFactory.swift in Sources */,
 				853DC05C2861AA8900C1F1B5 /* Feed.swift in Sources */,
@@ -251,6 +258,7 @@
 				853DC0422861081000C1F1B5 /* SceneDelegate.swift in Sources */,
 				853DC06C286207DA00C1F1B5 /* NetworkError.swift in Sources */,
 				853DC0632861AE2800C1F1B5 /* FeedMock.swift in Sources */,
+				853DC07528620E8F00C1F1B5 /* FeedLoadingError.swift in Sources */,
 				853DC0652861AED000C1F1B5 /* FeedCell.swift in Sources */,
 				853DC071286208DB00C1F1B5 /* ImageLoadingError.swift in Sources */,
 			);
