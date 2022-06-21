@@ -17,7 +17,7 @@ final class ModulesFactory {
   }
   
   private func makeFeedViewController() -> UIViewController {
-    ViewController()
+    FeedViewController()
   }
   
 }
