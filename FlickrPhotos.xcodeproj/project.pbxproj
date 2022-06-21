@@ -19,6 +19,10 @@
 		853DC0632861AE2800C1F1B5 /* FeedMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC0622861AE2800C1F1B5 /* FeedMock.swift */; };
 		853DC0652861AED000C1F1B5 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC0642861AED000C1F1B5 /* FeedCell.swift */; };
 		853DC0672862017F00C1F1B5 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC0662862017F00C1F1B5 /* FeedViewModel.swift */; };
+		853DC06A2862078700C1F1B5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC0692862078700C1F1B5 /* NetworkService.swift */; };
+		853DC06C286207DA00C1F1B5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC06B286207DA00C1F1B5 /* NetworkError.swift */; };
+		853DC06F2862088C00C1F1B5 /* ImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC06E2862088C00C1F1B5 /* ImagesRepository.swift */; };
+		853DC071286208DB00C1F1B5 /* ImageLoadingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DC070286208DB00C1F1B5 /* ImageLoadingError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		853DC0622861AE2800C1F1B5 /* FeedMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMock.swift; sourceTree = "<group>"; };
 		853DC0642861AED000C1F1B5 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		853DC0662862017F00C1F1B5 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		853DC0692862078700C1F1B5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		853DC06B286207DA00C1F1B5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		853DC06E2862088C00C1F1B5 /* ImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRepository.swift; sourceTree = "<group>"; };
+		853DC070286208DB00C1F1B5 /* ImageLoadingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,8 @@
 		853DC03E2861081000C1F1B5 /* FlickrPhotos */ = {
 			isa = PBXGroup;
 			children = (
+				853DC06D2862085400C1F1B5 /* Repositories */,
+				853DC0682862076E00C1F1B5 /* Network */,
 				853DC0612861AC2D00C1F1B5 /* Mocks */,
 				853DC0582861AA1A00C1F1B5 /* Models */,
 				853DC0552861A89400C1F1B5 /* Modules */,
@@ -141,6 +151,24 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		853DC0682862076E00C1F1B5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				853DC0692862078700C1F1B5 /* NetworkService.swift */,
+				853DC06B286207DA00C1F1B5 /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		853DC06D2862085400C1F1B5 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				853DC06E2862088C00C1F1B5 /* ImagesRepository.swift */,
+				853DC070286208DB00C1F1B5 /* ImageLoadingError.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -211,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				853DC06A2862078700C1F1B5 /* NetworkService.swift in Sources */,
 				853DC0672862017F00C1F1B5 /* FeedViewModel.swift in Sources */,
 				853DC0602861AAF500C1F1B5 /* Photo.swift in Sources */,
 				853DC05E2861AA9D00C1F1B5 /* PhotosList.swift in Sources */,
@@ -218,9 +247,12 @@
 				853DC05C2861AA8900C1F1B5 /* Feed.swift in Sources */,
 				853DC0442861081000C1F1B5 /* FeedViewController.swift in Sources */,
 				853DC0402861081000C1F1B5 /* AppDelegate.swift in Sources */,
+				853DC06F2862088C00C1F1B5 /* ImagesRepository.swift in Sources */,
 				853DC0422861081000C1F1B5 /* SceneDelegate.swift in Sources */,
+				853DC06C286207DA00C1F1B5 /* NetworkError.swift in Sources */,
 				853DC0632861AE2800C1F1B5 /* FeedMock.swift in Sources */,
 				853DC0652861AED000C1F1B5 /* FeedCell.swift in Sources */,
+				853DC071286208DB00C1F1B5 /* ImageLoadingError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

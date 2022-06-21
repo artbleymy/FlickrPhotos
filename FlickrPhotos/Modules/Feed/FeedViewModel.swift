@@ -15,16 +15,24 @@ final class FeedViewModel {
   }
 
   var items = FeedMock.default.photos.photo
-
+  
+  private var currentPage = 1
+  private var numberOfPages = Int.max
   private var state: State = .initial
   
-  init() { }
+  init() {
+    
+  }
   
   func loadFeed(completion: @escaping () -> Void) {
     guard state != .loading else { return }
+    guard currentPage <= numberOfPages else { return }
+    
     state = .loading
     // TODO: add feed loading
     completion()
+    numberOfPages = FeedMock.default.photos.pages
+    currentPage += 1
     state = .loaded
   }
 }
