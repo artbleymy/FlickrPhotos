@@ -8,8 +8,9 @@
 import UIKit
 
 final class FeedViewController: UIViewController {
-  let items = FeedMock.default.photos.photo
   
+  private let viewModel: FeedViewModel
+
   private lazy var collectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
     layout.minimumLineSpacing = 0
@@ -21,14 +22,22 @@ final class FeedViewController: UIViewController {
     return collectionView
   }()
   
+  init(viewModel: FeedViewModel) {
+    self.viewModel = viewModel
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     navigationItem.title = "Flickr's interestingness"
-    setupLayout()    
+    setupLayout()
   }
   
-  func setupLayout() {
+  private func setupLayout() {
     view.backgroundColor = .systemBackground
     view.addSubview(collectionView)
 
@@ -49,7 +58,7 @@ extension FeedViewController: UICollectionViewDataSource {
     _: UICollectionView,
     numberOfItemsInSection section: Int
   ) -> Int {
-    items.count
+    viewModel.items.count
   }
   
   func collectionView(
@@ -61,7 +70,7 @@ extension FeedViewController: UICollectionViewDataSource {
     else {
       fatalError("Dequeue feed cell error")
     }
-    cell.setupCell(with: items[indexPath.item].imageURL)
+    cell.setupCell(with: viewModel.items[indexPath.item].imageURL)
     return cell
   }
 }
