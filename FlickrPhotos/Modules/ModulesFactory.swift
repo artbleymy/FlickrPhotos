@@ -7,8 +7,6 @@
 
 import UIKit
 
-let MB = 1024
-
 final class ModulesFactory {
   lazy var navigationController = makeNavigationController()
   
@@ -61,7 +59,9 @@ final class ModulesFactory {
   }
   
   private func makeImagesCache() -> URLCache {
-    URLCache(
+    let MB = 1024 * 1024
+
+    return URLCache(
       memoryCapacity: 50 * MB,
       diskCapacity: 100 * MB,
       diskPath: "images"
